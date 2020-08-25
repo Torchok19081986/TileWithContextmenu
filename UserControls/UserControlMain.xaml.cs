@@ -39,5 +39,15 @@ namespace TileWithContextmenu.UserControls
         {
 
         }
+
+        private void EMail_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Instance.CurrentIndex = 1;
+        }
+
+        private void Another_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Instance.CurrentIndex = 2;
+        }
     }
 }

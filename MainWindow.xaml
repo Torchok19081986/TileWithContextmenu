@@ -10,10 +10,11 @@
     Title="MainWindow"
     Width="525"
     Height="350"
+    DataContext="{x:Static local:ViewModel.Instance}"
     Loaded="MetroWindow_Loaded"
     MouseDown="MetroWindow_MouseDown">
     <Grid>
-        <materialDesign:Transitioner AutoApplyTransitionOrigins="True" SelectedIndex="0">
+        <materialDesign:Transitioner AutoApplyTransitionOrigins="True" SelectedIndex="{Binding CurrentIndex}">
             <Grid>
                 <usercontrols:UserControlMain />
             </Grid>
@@ -25,6 +26,15 @@
                     <materialDesign:SlideWipe Direction="Right" />
                 </materialDesign:TransitionerSlide.ForwardWipe>
                 <usercontrols:UserControlMail />
+            </materialDesign:TransitionerSlide>
+            <materialDesign:TransitionerSlide>
+                <materialDesign:TransitionerSlide.BackwardWipe>
+                    <materialDesign:CircleWipe />
+                </materialDesign:TransitionerSlide.BackwardWipe>
+                <materialDesign:TransitionerSlide.ForwardWipe>
+                    <materialDesign:SlideWipe Direction="Right" />
+                </materialDesign:TransitionerSlide.ForwardWipe>
+                <usercontrols:AnotherOne />
             </materialDesign:TransitionerSlide>
         </materialDesign:Transitioner>
     </Grid>
