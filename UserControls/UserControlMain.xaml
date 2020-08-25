@@ -15,6 +15,7 @@
                 <RowDefinition Height="200" />
                 <RowDefinition Height="50" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <materialDesign:ColorZone
                 Grid.Row="0"
@@ -30,8 +31,7 @@
             </materialDesign:ColorZone>
             <Button
                 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-                Grid.Row="0"
-                Grid.RowSpan="2"
+                Grid.Row="3"
                 Margin="20"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
@@ -39,15 +39,32 @@
                 Style="{DynamicResource MaterialDesignFloatingActionButton}">
                 <materialDesign:PackIcon Kind="AddAlarm" />
             </Button>
-            <Controls:Tile
-                Grid.Row="2"
-                Margin="622,27,38,33"
-                Click="Tile_Click"
-                Command="{x:Static materialDesign:Transitioner.MoveNextCommand}">
+            <WrapPanel Grid.Row="2">
+                <Controls:Tile
+                Margin="5"
+                Click="EMail_Click">
                 <iconPacks:PackIconModern
                     Width="40"
                     Height="40"
                     Kind="Email" />
+                <Controls:Tile.ContextMenu>
+                    <ContextMenu
+                        Closed="cm_Closed"
+                        Opened="cm_Opened"
+                        StaysOpen="False">
+                        <MenuItem Header="Eigenschaften" />
+                        <Separator />
+                        <MenuItem Header="Info" />
+                    </ContextMenu>
+                </Controls:Tile.ContextMenu>
+            </Controls:Tile>
+            <Controls:Tile
+                Margin="5"
+                Click="Another_Click">
+                <iconPacks:PackIconModern
+                    Width="40"
+                    Height="40"
+                    Kind="_3d3ds" />
                 <Controls:Tile.ContextMenu>
                     <ContextMenu
                         Name="cm"
@@ -60,6 +77,8 @@
                     </ContextMenu>
                 </Controls:Tile.ContextMenu>
             </Controls:Tile>
+            </WrapPanel>
+            
         </Grid>
     </Grid>
 </UserControl>
