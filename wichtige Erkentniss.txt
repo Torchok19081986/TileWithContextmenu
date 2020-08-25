@@ -1,0 +1,3 @@
+Zu der HauptUI muss die Usercontrol geadded werden, nur dann wird das Tile acitve, sonst nicht.
+ Command="{x:Static materialDesign:Transitioner.MoveNextCommand}" -> Vorwärts und 
+ Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}" --> Rüückwärts navigiren.
