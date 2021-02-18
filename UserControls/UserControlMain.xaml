@@ -17,7 +17,7 @@
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="200" />
+                <RowDefinition Height="195" />
                 <RowDefinition Height="50" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
@@ -25,6 +25,7 @@
             <materialDesign:ColorZone
                 x:Name="mainframe"
                 Grid.Row="0"
+                Margin="0,0,0,35"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 VerticalContentAlignment="Stretch"
@@ -72,9 +73,20 @@
                             Closed="cm_Closed"
                             Opened="cm_Opened"
                             StaysOpen="False">
-                            <MenuItem Header="Eigenschaften" />
+                            <MenuItem
+                                x:Name="zeigen"
+                                Click="zeigen_Click"
+                                Header="Zeigen" />
                             <Separator />
-                            <MenuItem Header="Info" />
+                            <MenuItem
+                                x:Name="eigenschaten"
+                                Click="eigenschaten_Click"
+                                Header="Eigenschaften" />
+                            <Separator />
+                            <MenuItem
+                                x:Name="info"
+                                Click="info_Click"
+                                Header="Info" />
                         </ContextMenu>
                     </Controls:Tile.ContextMenu>
                     <iconPacks:PackIconModern

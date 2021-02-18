@@ -82,5 +82,25 @@ namespace TileWithContextmenu.UserControls
         {
             ViewModel.Instance.CurrentIndex = 4;
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void zeigen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void eigenschaten_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void info_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
