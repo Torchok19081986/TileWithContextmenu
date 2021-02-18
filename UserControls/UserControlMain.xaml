@@ -8,6 +8,11 @@
     xmlns:local="clr-namespace:TileWithContextmenu.UserControls"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="661.205"
+    Height="718.627"
+    materialDesign:ShadowAssist.ShadowEdges="All"
+    BorderThickness="1"
+    Loaded="UserControl_Loaded"
     mc:Ignorable="d">
     <Grid>
         <Grid>
@@ -18,67 +23,86 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <materialDesign:ColorZone
+                x:Name="mainframe"
                 Grid.Row="0"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 VerticalContentAlignment="Stretch"
                 Mode="Dark">
                 <TextBlock
-                    Margin="80"
+                    Margin="10,66"
                     VerticalAlignment="Center"
-                    FontSize="50"
-                    Text="ALARMS" />
+                    FontSize="35"
+                    Text="HAUPTFESNTER DES PROGRAMMS" />
             </materialDesign:ColorZone>
-            <Button
-                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-                Grid.Row="3"
-                Margin="20"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                Command="{x:Static materialDesign:Transitioner.MoveNextCommand}"
-                Style="{DynamicResource MaterialDesignFloatingActionButton}">
-                <materialDesign:PackIcon Kind="AddAlarm" />
-            </Button>
             <WrapPanel Grid.Row="2">
+                <StackPanel Width="148">
+                    <Controls:Tile
+                        x:Name="mailsettings"
+                        Margin="5"
+                        Background="LightSeaGreen"
+                        Click="EMail_Click">
+                        <Controls:Tile.ContextMenu>
+                            <ContextMenu
+                                Closed="cm_Closed"
+                                Opened="cm_Opened"
+                                StaysOpen="False">
+                                <MenuItem Header="Eigenschaften" />
+                                <Separator />
+                                <MenuItem Header="Info" />
+                            </ContextMenu>
+                        </Controls:Tile.ContextMenu>
+                        <iconPacks:PackIconModern
+                            Width="40"
+                            Height="40"
+                            Kind="Email" />
+                    </Controls:Tile>
+
+                </StackPanel>
+
+
                 <Controls:Tile
-                Margin="5"
-                Click="EMail_Click">
-                <iconPacks:PackIconModern
-                    Width="40"
-                    Height="40"
-                    Kind="Email" />
-                <Controls:Tile.ContextMenu>
-                    <ContextMenu
-                        Closed="cm_Closed"
-                        Opened="cm_Opened"
-                        StaysOpen="False">
-                        <MenuItem Header="Eigenschaften" />
-                        <Separator />
-                        <MenuItem Header="Info" />
-                    </ContextMenu>
-                </Controls:Tile.ContextMenu>
-            </Controls:Tile>
-            <Controls:Tile
-                Margin="5"
-                Click="Another_Click">
-                <iconPacks:PackIconModern
-                    Width="40"
-                    Height="40"
-                    Kind="_3d3ds" />
-                <Controls:Tile.ContextMenu>
-                    <ContextMenu
-                        Name="cm"
-                        Closed="cm_Closed"
-                        Opened="cm_Opened"
-                        StaysOpen="False">
-                        <MenuItem Header="Eigenschaften" />
-                        <Separator />
-                        <MenuItem Header="Info" />
-                    </ContextMenu>
-                </Controls:Tile.ContextMenu>
-            </Controls:Tile>
+                    x:Name="userssettings"
+                    Margin="5"
+                    Background="LightSeaGreen"
+                    Click="Another_Click">
+                    <Controls:Tile.ContextMenu>
+                        <ContextMenu
+                            x:Name="cm"
+                            Closed="cm_Closed"
+                            Opened="cm_Opened"
+                            StaysOpen="False">
+                            <MenuItem Header="Eigenschaften" />
+                            <Separator />
+                            <MenuItem Header="Info" />
+                        </ContextMenu>
+                    </Controls:Tile.ContextMenu>
+                    <iconPacks:PackIconModern
+                        Width="40"
+                        Height="40"
+                        Kind="User" />
+                </Controls:Tile>
+                <Controls:Tile
+                    x:Name="settings"
+                    Background="LightSeaGreen"
+                    Click="settings_Click">
+                    <iconPacks:PackIconModern
+                        Width="50"
+                        Height="75"
+                        Kind="Settings" />
+                </Controls:Tile>
+
+                <Controls:Tile
+                    x:Name="taskscheduler"
+                    Background="LightSeaGreen"
+                    Click="taskscheduler_Click">
+                    <iconPacks:PackIconModern
+                        Width="50"
+                        Height="75"
+                        Kind="ControlGuide" />
+                </Controls:Tile>
             </WrapPanel>
-            
+
         </Grid>
     </Grid>
 </UserControl>

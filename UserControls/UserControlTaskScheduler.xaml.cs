@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace TileWithContextmenu.UserControls
 {
     /// <summary>
-    /// Interaktionslogik für UserControlMail.xaml
+    /// Interaktionslogik für UserControlTaskScheduler.xaml
     /// </summary>
-    public partial class UserControlMail : UserControl
+    public partial class UserControlTaskScheduler : UserControl
     {
-        public UserControlMail()
+        public UserControlTaskScheduler()
         {
             InitializeComponent();
-        }
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

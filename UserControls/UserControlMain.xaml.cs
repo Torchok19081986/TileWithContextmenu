@@ -49,5 +49,38 @@ namespace TileWithContextmenu.UserControls
         {
             ViewModel.Instance.CurrentIndex = 2;
         }
+
+        private void settings_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Instance.CurrentIndex = 3;
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Color main = Color.FromRgb((byte)61, (byte)61, (byte)61);
+
+                Color vtegreen = Color.FromRgb(0, 148, 134);
+
+                mainframe.Background = new SolidColorBrush(main);
+
+                userssettings.Background = new SolidColorBrush(vtegreen);
+
+                mailsettings.Background = new SolidColorBrush(vtegreen);
+
+                settings.Background = new SolidColorBrush(vtegreen);
+
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
+
+        private void taskscheduler_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Instance.CurrentIndex = 4;
+        }
     }
 }

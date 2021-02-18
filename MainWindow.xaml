@@ -7,9 +7,9 @@
     xmlns:local="clr-namespace:TileWithContextmenu"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:usercontrols="clr-namespace:TileWithContextmenu.UserControls"
-    Title="MainWindow"
-    Width="525"
-    Height="350"
+    Title="Hauptfenster"
+    Width="671.013"
+    Height="747.415"
     DataContext="{x:Static local:ViewModel.Instance}"
     Loaded="MetroWindow_Loaded"
     MouseDown="MetroWindow_MouseDown">
@@ -36,6 +36,26 @@
                 </materialDesign:TransitionerSlide.ForwardWipe>
                 <usercontrols:AnotherOne />
             </materialDesign:TransitionerSlide>
+            <materialDesign:TransitionerSlide>
+                <materialDesign:TransitionerSlide.BackwardWipe>
+                    <materialDesign:CircleWipe />
+                </materialDesign:TransitionerSlide.BackwardWipe>
+                <materialDesign:TransitionerSlide.ForwardWipe>
+                    <materialDesign:SlideWipe Direction="Right" />
+                </materialDesign:TransitionerSlide.ForwardWipe>
+                <usercontrols:UserControlSettings />
+            </materialDesign:TransitionerSlide>
+            <materialDesign:TransitionerSlide>
+                <materialDesign:TransitionerSlide.BackwardWipe>
+                    <materialDesign:CircleWipe />
+                </materialDesign:TransitionerSlide.BackwardWipe>
+                <materialDesign:TransitionerSlide.ForwardWipe>
+                    <materialDesign:SlideWipe Direction="Right" />
+                </materialDesign:TransitionerSlide.ForwardWipe>
+                <usercontrols:UserControlTaskScheduler />
+            </materialDesign:TransitionerSlide>
         </materialDesign:Transitioner>
+
+
     </Grid>
 </Controls:MetroWindow>
